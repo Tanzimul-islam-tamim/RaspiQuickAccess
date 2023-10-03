@@ -22,6 +22,8 @@ languagetrans.hide()
 rulebook = Window(app, title="Rules", height=500, width= 900)
 rulebook.hide()
 
+aboutUs = Window(app, title="US", height=500, width= 900,)
+aboutUs.hide()
 #facerecwindow = Window(app, title="Close",height= 500, width=900)
 #facerecwindow.hide()
 
@@ -66,11 +68,11 @@ def VideoOn():
     video_capture = cv2.VideoCapture(0)
 
     # Load a sample picture and learn how to recognize it.
-    obama_image = face_recognition.load_image_file("1.jpg")
+    obama_image = face_recognition.load_image_file("Phelps.jpg")
     obama_face_encoding = face_recognition.face_encodings(obama_image)[0]
 
     # Load a second sample picture and learn how to recognize it.
-    biden_image = face_recognition.load_image_file("afridi.jpg")
+    biden_image = face_recognition.load_image_file("bolt.jpg")
     biden_face_encoding = face_recognition.face_encodings(biden_image)[0]
 
     # Create arrays of known face encodings and their names
@@ -143,6 +145,8 @@ def VideoOn():
 #def loopbreaker():
  #   breaker = 1
 
+def InfoUs():
+    aboutUs.show()
 
 
 
@@ -150,45 +154,54 @@ def VideoOn():
 
 
 
+##Main Window 5 buttons
 
-##Main Window 4 buttons
-FaceRecButt = PushButton(app,VideoOn,text="Face Recogntion",height = "3", width = "17", grid=[1,0])
+About = PushButton(app,InfoUs, text="                          About", height= 3, width= 17 , grid=[1,2])
+About.text_size = 34
+About.text_color = "white"
+About.bg = "red"
+Us = PushButton(app,InfoUs, text="Us                               ", height= 3, width= 17 , grid=[2,2])
+Us.text_size = 34
+Us.text_color = "white"
+Us.bg = "red"
+
+FaceRecButt = PushButton(app,VideoOn,text="Face Recogntion",height =3, width = 17, grid=[1,0])
 FaceRecButt.text_size = 34
 FaceRecButt.bg = "magenta"
 
 
-HelpMe = PushButton(app,infowindowshow,text="Help",height = "3", width = "17", grid=[1,1])
+HelpMe = PushButton(app,infowindowshow,text="Help",height = 3, width = 17, grid=[1,1])
 HelpMe.text_size = 34
 HelpMe.bg = "green"
 """
-InfoMe = PushButton(app,infowindowshow,text="Info",height = "3", width = "17", grid=[1,1])
+InfoMe = PushButton(app,infowindowshow,text="Info",height = "3", width = 17, grid=[1,1])
 InfoMe.text_size = 34
 InfoMe.bg = "green"
 """
-LanguageTrans = PushButton(app,langtransshow,text="Language Translation",height = "3", width = "17", grid=[2,0])
+LanguageTrans = PushButton(app,langtransshow,text="Language Translation",height = 3, width = 17, grid=[2,0])
 LanguageTrans.text_size = 34
 LanguageTrans.bg = "orange"
 
 
-RuleBook = PushButton(app,ruleb,text="Rule Book",height = "3", width = "17", grid=[2,1])
+RuleBook = PushButton(app,ruleb,text="Rule Book",height = 3, width = 17, grid=[2,1])
 RuleBook.text_size = 34
 RuleBook.bg = "cyan"
 
 ### The Info Window Codings -0
 infoMotivation = Text(infowindow,text="Opportunities don't happen, you create them.",font="Helvetica", size= 30,align= "bottom", color= "blue" )
 
-InfoExit1 = PushButton(infowindow,infowindowhide,text="Exit",height = "2", width = "10", align= "bottom")
+InfoExit1 = PushButton(infowindow,infowindowhide,text="Exit",height = 2, width = 10, align= "bottom")
 InfoExit1.text_size = 34
 InfoExit1.bg = "red"
 InfoExit1.text_color = "white"
-InfoEnter = PushButton(infowindow,infoenter,text="Enter",height = "2", width = "10", align= "bottom")
+InfoEnter = PushButton(infowindow,infoenter,text="Enter",height = 2, width = 10, align= "bottom")
 InfoEnter.text_size = 34
 InfoEnter.bg = "green"
 
 InfoText = TextBox(infowindow,text="Please Enter your Athlete ID: 2958 ",width= 100, align= "top")
 ##0-9 Buttons -0
 ## Buttons -1
-InfoExit = PushButton(infogif,infoenterhide,text="Thank You",height = "2", width = "10", align= "bottom") #Info 3rd Window
+InfoExit = PushButton(infogif,infoenterhide,text="Thank You",height = 2, width = 10, align= "bottom") #Info 3rd Window
 InfoExit.text_size = 34
 InfoExit.bg = "red"
 
